@@ -1,0 +1,168 @@
+<!-- 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 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xpedia Navbar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo"><img src="img/logo.png" alt=""></div>
+        <div class="navbar-links">
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="index.html" target="_blank">Home</a></li>
+                <li><a href="cources.html" target="_blank">Courses</a></li>
+                <li><a href="leaderboard.html" target="_blank">Leaderboard</a></li>
+                <li><a href="challenges.html" target="">Challenges</a></li>
+                <li><a href="#" target="_blank">My Progress</a></li>
+            </ul>
+            <!-- Sign-in/Sign-up Button -->
+            <button class="auth-button"><a href="signup.html" target="_blank">Sign in / Sign up</a></button>
+        </div>
+
+    </nav>
+
+
+    <div class="hero-section">
+        <!-- <div> <img class="Group" src="img/Group.png" alt=""></div> -->
+
+        <h1 class="text">Xpedia - Level Up Your Learning!</h1>
+        <p>Gaified Eduction with XP Challenges and Ai powered tutoring.Learn Smarter,Not Harder!</p>
+        <div class="button">
+            <a href="#courses-section"><button>Get Started</button></a>
+            <a href=""><button>Watch Demo</button></a>
+        </div>
+    </div>
+    <div class="group">
+        <img src="img/Group.png" alt="">
+        <!-- <p>ashish
+         </p> -->
+    </div>
+
+    <!-- chatbot  -->
+    <div class="chatbot">
+        <div class="chat-container">
+            <span class="chat-text">Need Help?</span>
+            <div class="chat-icon">
+                <a href="chat.html" target="_blank">
+                    <img src="img/Vector (6)(1).png" alt="chatbot" class="icon"></a>
+            </div>
+
+        </div>
+    </div>
+    <!-- About Us Section -->
+    <section class="about-us">
+        <h2>About Us</h2>
+        <div class="about-card">
+            <p>Xpedia transforms learning into an adventure! Earn XP, unlock achievements, and compete on leaderboards
+                while mastering engineering subjects. With AI-powered tutoring, interactive challenges, and real-time
+                progress tracking, we make education fun, engaging, and personalized. Learn. Play. Conquer!</p>
+            <button class="btn primary">Learn More</button>
+        </div>
+        <img src="img/slide1.png" alt="Wavy Icon" class="icon1">
+        <img class="star star-1" src="img/Star 1.png" alt="Star">
+        <img class="star star-2" src="img/Star 2.png" alt="Star">
+    </section>
+
+    <!-- features section -->
+
+    <section class="features-section">
+        <h2>Features</h2>
+        <div class="features-container">
+            <div class="feature">
+                <div class="icon">
+                    <img src="img/Mask group (1)(1).png" alt="Gamified Learning">
+                </div>
+                <p>Gamified Learning</p>
+            </div>
+            <div class="feature">
+                <div class="icon">
+                    <img src="img/Vector (6)(1).png" alt="AI Tutor">
+                </div>
+                <p>AI Tutor (Instant Doubt Solving)</p>
+            </div>
+            <div class="feature">
+                <div class="icon">
+                    <img src="img/Vector (4)(1).png" alt="Quizzes">
+                </div>
+                <p>Interactive Quizzes & Challenges</p>
+            </div>
+            <div class="feature">
+                <div class="icon">
+                    <img src="img/Vector (5)(1).png" alt="Leaderboard">
+                </div>
+                <p>Leaderboard & Rewards</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- category section  -->
+
+    <div class="container">
+        <h1>Courses Categories</h1>
+
+        <button class="nav-btn prev-btn" onclick="scrollLeft()">&#10094;</button>
+        <div class="courses-wrapper" id="coursesContainer"></div>
+        <button class="nav-btn next-btn" onclick="scrollRight()">&#10095;</button>
+    </div>
+
+    <!-- join us now  -->
+
+    <section class="join-us">
+        <h2>Join US Now</h2>
+        <p>Experience a fun, gamified way to learn with Xpedia! Earn XP, unlock achievements, and challenge friends
+            while mastering subjects with AI-powered tutoring. Get instant solutions, track your progress, and compete
+            on leaderboards—all in one place.</p>
+        <button class="btn primary"><a href="signup.html" target="_blank">Get Started Now</a></button>
+    </section>
+
+    <!-- footer  -->
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Xpedia</h3>
+                <p>Level up your learning with gamified education, AI-powered tutoring, and interactive challenges!</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                    <li><a href="#">Challenges</a></li>
+                    <li><a href="#">My Progress</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@xpedia.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Xpedia. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

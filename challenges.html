@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenges | Xpedia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+        background: linear-gradient(135deg, #4a90e2, #a4508b);
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .challenges-container {
+        text-align: center;
+        padding: 50px;
+        color: white;
+    }
+
+    .challenge-list {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    .challenge-card {
+        background: linear-gradient(135deg, #4a90e2, #a4508b);
+        padding: 20px;
+        border-radius: 15px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .challenge-card:hover {
+        transform: scale(1.05);
+    }
+
+    .easy {
+        background: linear-gradient(to right, #2ecc71, #27ae60);
+    }
+
+    .medium {
+        background: linear-gradient(to right, #f39c12, #d35400);
+    }
+
+    .hard {
+        background: linear-gradient(to right, #e74c3c, #c0392b);
+    }
+
+    .start-btn {
+        background: white;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background 0.3s ease-in-out;
+    }
+
+    .start-btn:hover {
+        background: #dddddd;
+    }
+
+    .quiz-container {
+        border: 1px solid white;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: auto;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        color: white;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    .question-container {
+        /* border: 1px solid white; */
+        display: flex;
+        justify-content: flex-start;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        width: 400px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .quiz-question {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    /* Updated style for radio buttons */
+    #options {
+        display: flex;
+        justify-content: center;
+        /* flex-direction: column; */
+        gap: 40px;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .quiz-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        background: transparent;
+        padding: 8px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    /* Hide the default radio button */
+    .quiz-option input[type="radio"] {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 2px solid white;
+        border-radius: 50%;
+        outline: none;
+        transition: 0.2s;
+        position: relative;
+    }
+
+    /* Custom styling when radio button is selected */
+    .quiz-option input[type="radio"]:checked {
+        border-color: #ff9800;
+        background-color: #ff9800;
+    }
+
+    .quiz-option input[type="radio"]:checked::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 8px;
+        height: 8px;
+        background-color: white;
+        border-radius: 50%;
+    }
+
+    .quiz-option:hover {
+        color: #ff9800;
+    }
+
+    #next-btn {
+        margin-top: 15px;
+        padding: 10px 20px;
+        border: none;
+        background: #4CAF50;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+
+    .quiz-next-btn:disabled {
+        background: gray;
+        cursor: not-allowed;
+    }
+
+    .quiz-score {
+        font-size: 24px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><img src="img/logo.png" alt="Xpedia Logo"></div>
+        <div class="navbar-links">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Leaderboard</a></li>
+                <li><a href="challenges.html">Challenges</a></li>
+                <li><a href="#">My Progress</a></li>
+            </ul>
+            <button class="auth-button"><a href="signup.html">Sign in / Sign up</a></button>
+        </div>
+    </nav>
+
+    <div class="challenges-container">
+        <h1>📌 Challenges</h1>
+        <p>Complete challenges to earn XP and climb the leaderboard!</p>
+
+        <div class="challenge-list">
+            <div class="challenge-card easy">
+                <h2>🚀 Beginner Challenge</h2>
+                <p>Complete 5 easy coding problems.</p>
+                <button onclick="startQuiz('beginner')" class="start-btn">Start Challenge</button>
+            </div>
+
+            <div class="challenge-card medium">
+                <h2>🔥 Intermediate Challenge</h2>
+                <p>Build a small project using JavaScript.</p>
+                <button onclick="startQuiz('intermediate')" class="start-btn">Start Challenge</button>
+            </div>
+
+            <div class="challenge-card hard">
+                <h2>💀 Expert Challenge</h2>
+                <p>Develop an AI-powered feature for a web app.</p>
+                <button onclick="startQuiz('expert')" class="start-btn">Start Challenge</button>
+            </div>
+        </div>
+        <div id="quiz-container" class="quiz-container" style="display: none;"></div>
+    </div>
+
+    <script src="challenges.js">
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     const buttons = document.querySelectorAll(".start-btn");
+
+        //     buttons.forEach(button => {
+        //         button.addEventListener("click", function () {
+        //             alert("Challenge Started! Good Luck 🚀");
+        //         });
+        //     });
+        // });
+
+    </script>
+</body>
+
+</html>

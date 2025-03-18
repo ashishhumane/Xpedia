@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Xpedia - Engineering Courses</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0E0E10;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+
+        
+.navbar {
+    /* margin-left: 400px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #1e1d22;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); */
+    margin-top: 0;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo img {
+    height: 150px;
+    width: 200px;
+}
+
+.nav-links {
+    /* margin-left: 790px; */
+    list-style: none;
+    display: flex;
+    gap: 70px;
+}
+
+.nav-links li {
+    display: inline;
+    
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+    font-weight: 30px;
+}
+
+.nav-links a:hover {
+    color: #bbbbbb;
+}
+
+.auth-button {
+    /* margin-left: 10px; */
+    background: linear-gradient(to top, #4a90e2, #a4508b);
+    color: white;
+    padding: 15px 25px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-button:hover {
+    opacity: 0.8;
+}
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #3B82F6, #9333EA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 0px;
+
+        }
+
+        /* Course Grid */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        /* Course Card */
+        .course-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 20px rgba(255, 215, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-align: left;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 220px; /* Ensuring equal height */
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 25px rgba(255, 215, 0, 0.3);
+            border: 2px solid #9333EA;
+        }
+
+        .course-card h3 {
+            font-size: 1.4rem;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .course-card p {
+            color: #D3D3D3;
+            font-size: 14px;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        /* Button Styling */
+        .enroll-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            text-align: center;
+            background: linear-gradient(90deg, #3B82F6, #9333EA);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 12px;
+            transition: opacity 0.3s ease-in-out, transform 0.2s;
+        }
+
+        .enroll-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+        footer {
+    background: #111;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-bottom {
+    background: #222;
+    padding: 10px;
+    font-size: 14px;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="logo"><img src="img/logo.png" alt=""></div>
+            <div class="navbar-links">
+                <!-- Navigation Links -->
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                    <li><a href="#">Challenges</a></li>
+                    <li><a href="#">My Progress</a></li>
+                </ul>
+                <!-- Sign-in/Sign-up Button -->
+                <button class="auth-button">Sign in / Sign up</button>
+            </div>
+    
+        </nav>
+    </header>
+
+<div class="container">
+    <h1>Explore Engineering Courses</h1>
+    <div class="courses-grid" id="coursesContainer"></div>
+</div>
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Xpedia</h3>
+            <p>Level up your learning with gamified education, AI-powered tutoring, and interactive challenges!</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="challenges.html">Challenges</a></li>
+                <li><a href="#">My Progress</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: support@xpedia.com</p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Xpedia. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+<script>
+    const courses = [
+        { title: "Introduction to Software Engineering", description: "Learn the fundamentals of software engineering, SDLC, and best practices." },
+        { title: "Web Development", description: "Explore front-end and back-end development using JavaScript and modern frameworks." },
+        { title: "Data Structures & Algorithms", description: "Master essential data structures and algorithms to improve coding skills." },
+        { title: "Database Management Systems", description: "Understand relational databases, SQL, and NoSQL for data storage." },
+        { title: "Software Testing & Quality Assurance", description: "Learn manual and automated testing techniques to ensure software quality." },
+        { title: "Thermodynamics", description: "Master the laws of thermodynamics and heat transfer." },
+        { title: "Introduction to Electrical Circuits", description: "Explore the basics of electrical circuits and components." },
+        { title: "Civil Engineering Structures", description: "Understand the principles of civil engineering and construction." }
+    ];
+
+    function loadCourses() {
+        const container = document.getElementById("coursesContainer");
+        container.innerHTML = "";
+
+        courses.forEach(course => {
+            const courseCard = document.createElement("div");
+            courseCard.classList.add("course-card");
+            courseCard.innerHTML = `
+                <h3>${course.title}</h3>
+                <p>${course.description}</p>
+                <button class="enroll-btn">Explore</button>
+            `;
+            container.appendChild(courseCard);
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadCourses);
+</script>
+
+</body>
+</html>

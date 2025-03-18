@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xpedia - About Us</title>
+    <style>
+        /* General Body Styling */
+        body {
+            background: radial-gradient(circle at top right, #2A083F, #0D0D0D);
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* About Us Section */
+        .about-container {
+            position: relative;
+            background: #D7BFD4;
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 1189px;
+            text-align: center;
+            border: 1px solid #000;
+            box-shadow: 0px 0px 22px #007BFF, 0px 0px 44px #007BFF;
+        }
+
+        /* Floating Icons */
+        .about-container .icon,
+        .star1,
+        .star2 {
+            position: absolute;
+            width: 50px;
+            height: auto;
+        }
+
+        .icon {
+            top: -20px;
+            left: 44px;
+        }
+
+        .star1 {
+            top: 10px;
+            left: 20px;
+        }
+
+        .star2 {
+            top: 20px;
+            right: 20px;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .about-container p {
+            font-size: 20px;
+            color: black;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .about-container button {
+            background: linear-gradient(#b562a8, #004A99);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .about-container button:hover {
+            background: linear-gradient(#0072ff, #5a189a);
+            transform: scale(1.05);
+        }
+
+        /* Features Section */
+        .features-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Features Image Box */
+        .features-img {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            width: 400px;
+            height: 400px;
+            /* background: #8249A5; */
+            border-radius: 30px;
+            padding: 15px;
+        }
+
+        .features-img img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Features List */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 18px;
+            transition: 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Feature Icons */
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: #9B59B6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(205, 75, 205, 0.3);
+        }
+
+        .feature-icon img {
+            width: 30px;
+            height: 30px;
+            filter: invert(1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .about-container p {
+                font-size: 18px;
+            }
+
+            .features-img {
+                width: 100%;
+                height: auto;
+            }
+
+            .features-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>About Us</h1>
+    <div class="about-container">
+        <img src="img/slide1.png" alt="Wavy Icon" class="icon">
+        <img src="img/Star1.png" alt="star" class="star1">
+        <img src="img/Star2.png" alt="star" class="star2">
+
+        <p>
+            Xpedia transforms learning into an adventure! Earn XP, unlock achievements,
+            and compete on leaderboards while mastering engineering subjects. With AI-powered
+            tutoring, interactive challenges, and real-time progress tracking, we make
+            education fun, engaging, and personalized. Learn. Play. Conquer!
+        </p>
+        <button>Learn More</button>
+    </div>
+
+    <h1>Features</h1>
+    <div class="features-section">
+        <div class="features-img">
+            <img src="img/Rectangle 20.png" alt="gamified">
+            <img src="img/Rectangle 19.png" alt="AI Tutor">
+            <img src="img/Rectangle 22.png" alt="Challenges">
+            <img src="img/Rectangle 21.png" alt="Leaderboard">
+        </div>
+        <div class="features-list">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="img/MaskGroup1.png" alt="">
+                </div>
+                <p>Gamified Learning</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="img/Vector6.png" alt="">
+                </div>
+                <p>AI Tutor (Instant Doubt Solving)</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="img/Vector4.png" alt="">
+                </div>
+                <p>Interactive Quizzes & Challenges</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="img/Vector5.png" alt="">
+                </div>
+                <p>Leaderboard & Rewards</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

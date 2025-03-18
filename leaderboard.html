@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom,#1F008C, #271B33);
+            text-align: center;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .leaderboard {
+            width: 60%;
+            background:linear-gradient(#92277B, #2D0E56);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            backdrop-filter: blur(15px);
+            transition: transform 0.3s ease;
+        }
+        .leaderboard:hover {
+            transform: scale(1.02);
+        }
+        h1 {
+            color: #fff;
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(to right,#1F008C, #271B33);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+        th {
+            background: #92277B;
+            font-size: 18px;
+        }
+        tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        tr:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transition: background 0.3s ease;
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px 18px;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 10px rgba(255, 75, 43, 0.5);
+        }
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px rgba(255, 75, 43, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="leaderboard">
+        <h1>🏆 Leaderboard</h1>
+        <select id="filter" onchange="filterLeaderboard()">
+            <option value="all-time">All Time</option>
+            <option value="weekly">Weekly</option>
+            <option value="daily">Daily</option>
+        </select>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+                <!-- Data will be inserted here dynamically -->
+            </tbody>
+        </table>
+        <button onclick="addRandomScore()">Add Random Score</button>
+    </div>
+
+    <script>
+        let players = [
+            { name: "Alice", score: 1200, timeframe: "all-time" },
+            { name: "Bob", score: 1100, timeframe: "weekly" },
+            { name: "Charlie", score: 950, timeframe: "daily" },
+            { name: "David", score: 800, timeframe: "all-time" }
+        ];
+
+        function updateLeaderboard(filteredPlayers = players) {
+            const tbody = document.getElementById("leaderboard-body");
+            tbody.innerHTML = "";
+            filteredPlayers.sort((a, b) => b.score - a.score);
+            filteredPlayers.forEach((player, index) => {
+                let row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${player.name}</td>
+                    <td>${player.score}</td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+        }
+
+        function filterLeaderboard() {
+            const filter = document.getElementById("filter").value;
+            if (filter === "all-time") {
+                updateLeaderboard(players);
+            } else {
+                const filteredPlayers = players.filter(player => player.timeframe === filter);
+                updateLeaderboard(filteredPlayers);
+            }
+        }
+
+        function addRandomScore() {
+            let newPlayer = {
+                name: "Player " + (players.length + 1),
+                score: Math.floor(Math.random() * 1500),
+                timeframe: ["all-time", "weekly", "daily"][Math.floor(Math.random() * 3)]
+            };
+            players.push(newPlayer);
+            filterLeaderboard();
+        }
+
+        updateLeaderboard();
+    </script>
+</body>
+</html>
